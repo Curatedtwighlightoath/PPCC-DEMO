@@ -39,5 +39,6 @@
   "connectorDeployed": true,
   "openFoodFactsConnectionId": "79534ce3-2581-41ef-8b67-27527108b4e6",
   "productDataSourceScaffolded": true,
-  "connectorDataSourceScaffolded": true
+  "connectorDataSourceScaffolded": true,
+  "barcodeScanUiScaffolded": true
 }
