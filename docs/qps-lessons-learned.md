@@ -6,6 +6,8 @@
 
 So far our Power Platform work has mostly been FAQ agents built directly in an environment. Building real business apps for other teams needs a different way of working: how we build them, how we ship them, and how we secure them. This lab (a warehouse stock app built end to end on Power Platform) showed that way of working. This note covers what we should take from it, what we shouldn't copy as-is, and the questions we need to put to IT and Legal.
 
+**Companion note:** [Frontend and backend on Power Platform](qps-frontend-backend.md) covers which logic belongs in the screens and which on the server.
+
 A teammate is attending a separate CI/CD pipelines lab. That lab covers *delivery* security. This one covered *building* and *data* security. We need both.
 
 ## 1. The core shift: an app is a package we build, not a thing we edit in place
