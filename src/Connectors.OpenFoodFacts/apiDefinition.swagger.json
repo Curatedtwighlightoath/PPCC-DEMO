@@ -1,0 +1,113 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Open Food Facts",
+    "description": "Look up product data by barcode from the Open Food Facts public database.",
+    "version": "1.0"
+  },
+  "host": "world.openfoodfacts.org",
+  "basePath": "/api/v2",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/product/{barcode}.json": {
+      "get": {
+        "operationId": "GetProductByBarcode",
+        "summary": "Get product by barcode",
+        "description": "Looks up a product by its EAN/UPC barcode.",
+        "parameters": [
+          {
+            "name": "barcode",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-summary": "Barcode",
+            "description": "The product's EAN/UPC barcode."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The product",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          },
+          "404": {
+            "description": "No product found for this barcode"
+          }
+        }
+      }
+    },
+    "/product-image": {
+      "get": {
+        "operationId": "GetProductImage",
+        "summary": "Get product image",
+        "description": "Downloads a product image through the connector, so apps can display it.",
+        "produces": [
+          "image/jpeg",
+          "image/png"
+        ],
+        "parameters": [
+          {
+            "name": "imageUrl",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "x-ms-summary": "Image URL",
+            "description": "The image URL returned by Get product by barcode."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The image bytes",
+            "schema": {
+              "type": "file",
+              "format": "binary",
+              "x-ms-media-kind": "image"
+            }
+          },
+          "400": {
+            "description": "imageUrl query parameter is required"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Product": {
+      "type": "object",
+      "properties": {
+        "ean": {
+          "type": "string",
+          "x-ms-summary": "EAN"
+        },
+        "name": {
+          "type": "string",
+          "x-ms-summary": "Name"
+        },
+        "brand": {
+          "type": "string",
+          "x-ms-summary": "Brand"
+        },
+        "quantity": {
+          "type": "string",
+          "x-ms-summary": "Quantity"
+        },
+        "imageUrl": {
+          "type": "string",
+          "x-ms-summary": "Image URL"
+        }
+      }
+    }
+  },
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {},
+  "security": [],
+  "tags": []
+}
