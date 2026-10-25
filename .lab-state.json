@@ -6,5 +6,13 @@
   "publisherPrefix": "lab",
   "repo": "Curatedtwighlightoath/PPCC-DEMO",
   "mainRulesetId": 25828181,
-  "mainRulesetName": "lab-main-protection"
+  "mainRulesetName": "lab-main-protection",
+  "devEnvUrl": "https://wm-dev-1783.crm.dynamics.com",
+  "devEnvId": "f72583ad-7e23-efd5-aab5-aba38b3d960e",
+  "devOrgId": "f33a1581-dacf-f111-be88-7ced8d71461e",
+  "devProfile": "dev",
+  "testEnvUrl": "https://wm-test-1783.crm.dynamics.com",
+  "testEnvId": "a9c3ad19-1357-e4fc-91d9-de5e9fe2671c",
+  "testOrgId": "f23a1581-dacf-f111-be88-7ced8d71463f",
+  "testProfile": "test"
 }
