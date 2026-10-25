@@ -11,7 +11,9 @@
       <grid name="resultset" jump="lab_name" select="1" icon="1" preview="1">
         <row name="result" id="lab_warehouselocationid">
           <cell name="lab_name" width="300" />
-          <cell name="createdon" width="125" />
+          <cell name="lab_address" width="125" />
+          <cell name="lab_capacity" width="125" />
+          <cell name="lab_isactive" width="125" />
         </row>
       </grid>
     </layoutxml>
@@ -21,7 +23,9 @@
         <entity name="lab_warehouselocation">
           <attribute name="lab_warehouselocationid" />
           <attribute name="lab_name" />
-          <attribute name="createdon" />
+          <attribute name="lab_address" />
+          <attribute name="lab_capacity" />
+          <attribute name="lab_isactive" />
           <order attribute="lab_name" descending="false" />
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />
